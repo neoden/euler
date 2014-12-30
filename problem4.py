@@ -38,16 +38,17 @@ def test_is_palindrome():
 	assert(is_palindrome(9009) == True)
 	assert(is_palindrome(239847) == False)
 
-palindromes = []
+palindromes = {}
 
 def main():
-	# obviously maximum should be a product of values from the 9-th hundred
-	for i in reversed(range(900, 999)):
+	for i in reversed(range(100, 999)):
 		for j in reversed(range(i, 999)):
 			p = i * j
 			if is_palindrome(p):
-				palindromes.append(p)
-	print(max(palindromes), i, j)
+				palindromes[p]= (i, j)
+	max_p = max(palindromes.keys())
+	factors = palindromes[max_p]
+	print(max_p, factors)
 
 def test():
 	test_n_digits()
