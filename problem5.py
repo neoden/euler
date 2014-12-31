@@ -2,8 +2,6 @@
 # 
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-N = 10
-
 def find_smallest_common_divisible(x):
 	if x < 2 or int(x) != x:
 		raise ValueError("argument must be an integer greater or equal to 2")
@@ -17,4 +15,5 @@ def find_smallest_common_divisible(x):
 			s = s * n
 	return s
 
+print(find_smallest_common_divisible(10))
 print(find_smallest_common_divisible(20))
